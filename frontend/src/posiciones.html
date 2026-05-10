@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liga - Posiciones y Fixture</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <!-- Menú de Navegación (Header)  -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <!-- Logo de la Liga / Botón Inicio -->
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <i class="bi bi-trophy-fill me-2 text-warning"></i>
+                <span class="fw-bold">LIGA TPM</span>
+            </a>
+            
+            <!-- Botón Hamburguesa para Móviles ] -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Secciones del Menú  -->
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="equipos.html">Equipos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="posiciones.html">Liga</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="multimedia.html">Multimedia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="reglamento.html">Reglamento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">
+                            <i class="bi bi-person-circle"></i> Login
+                        </a>
+                    </li>
+                    <!-- Botón de Descargar con formato especial  -->
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-outline-warning btn-sm" href="download.html">
+                            <i class="bi bi-download"></i> Descargar
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <div class="row">
+            <!-- Tabla de Posiciones -->
+            <section class="col-lg-8 mb-5">
+                <h2 class="h3 fw-bold mb-4"><i class="bi bi-table"></i> Tabla de Posiciones</h2>
+                <div class="table-responsive shadow-sm rounded">
+                    <!-- Clase .table-striped y .table-hover de Bootstrap  -->
+                    <table class="table table-dark table-striped table-hover mb-0" border="1">
+                        <thead class="table-primary text-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Equipo</th>
+                                <th scope="col">PJ</th>
+                                <th scope="col">PG</th>
+                                <th scope="col">PE</th>
+                                <th scope="col">PP</th>
+                                <th scope="col" class="d-none d-md-table-cell">GF</th>
+                                <th scope="col" class="d-none d-md-table-cell">GC</th>
+                                <th scope="col">DIF</th>
+                                <th scope="col">PTS</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla-body">
+                            <!-- Datos inyectados por JS o cargados manualmente  -->
+                            <tr>
+                                <th scope="row">1</th>
+                                <td class="fw-bold">Titanes FC</td>
+                                <td>10</td>
+                                <td>8</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td class="d-none d-md-table-cell">25</td>
+                                <td class="d-none d-md-table-cell">10</td>
+                                <td>+15</td>
+                                <td class="text-warning fw-bold">25</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Resultados y Fixture (Uso de colspan/rowspan)  -->
+            <aside class="col-lg-4">
+                <h2 class="h3 fw-bold mb-4"><i class="bi bi-calendar-check"></i> Últimos Resultados</h2>
+                <div class="card bg-light border-0 shadow-sm">
+                    <div class="card-body">
+                        <table class="table table-sm align-middle text-center">
+                            <!-- Ejemplo de estructura compleja de tabla  -->
+                            <thead>
+                                <tr>
+                                    <th colspan="3" class="table-secondary">Fecha 10 - Finalizados</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-end">Titanes FC</td>
+                                    <td class="fw-bold bg-white rounded border">2 - 1</td>
+                                    <td class="text-start">Gamer Pro</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-end">Spartans</td>
+                                    <td class="fw-bold bg-white rounded border">0 - 0</td>
+                                    <td class="text-start">United</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="3" class="small text-muted">Todos los horarios en GMT-3</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Botón de Reglamento rápido  -->
+                <div class="mt-4 p-3 border-start border-4 border-primary bg-white shadow-sm">
+                    <h5>¿Dudas con los puntos?</h5>
+                    <a href="reglamento.html" class="btn btn-link p-0 text-decoration-none">Consultar Reglamento</a>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer (Pie de página) -->
+    <footer class="bg-dark text-white pt-4 pb-2 mt-5">
+        <div class="container text-center">
+            <p>Liga TPM - Internacional Latam &copy; 2026</p>
+            <div class="mb-2">
+                <a href="#" class="text-white me-3"><i class="bi bi-youtube"></i></a>
+                <a href="#" class="text-white me-3"><i class="bi bi-tiktok"></i></a>
+                <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

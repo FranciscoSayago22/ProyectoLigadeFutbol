@@ -27,6 +27,15 @@
 body {
     background-color: var(--color-fondo);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+/* Crece para empujar el footer */
+main {
+    flex: 1;
 }
 
 /* Efectos de sombreado y bordes */
