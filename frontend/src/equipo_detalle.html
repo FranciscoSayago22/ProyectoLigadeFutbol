@@ -57,7 +57,7 @@
     </nav>
     <!-- Header compartido  -->
 
-    <main class="container my-5">
+    <main class="container my-5 pt-5 mt-5">
         <!-- Banner de Identidad del Club -->
         <section id="info-club" class="p-5 mb-4 rounded-3 shadow-sm text-white">
             <div class="row align-items-center">
@@ -80,17 +80,46 @@
             </article>
             <!-- Roster / Plantilla de Jugadores -->
             <section class="col-lg-8">
-                <h3 class="fw-bold mb-3">Plantilla Oficial</h3>
+                <h3 class="fw-bold mb-3">Plantel Oficial</h3>
                 <div class="table-responsive">
                     <table class="table table-hover align-middle">
                         <thead class="table-dark">
                             <tr>
-                                <th>Dorsal</th>
-                                <th>Nombre</th>
-                                <th>Posición</th>
-                                <th>Acción</th>
+                                <th class="text-center" style="width: 10%;">Camiseta</th>
+                                
+                                <th style="width: 50%;">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-2">Nombre</span>
+                                        <div class="input-group input-group-sm">
+                                            <span class="input-group-text bg-dark text-white border-secondary"><i class="bi bi-search"></i></span>
+                                            <input type="text" id="buscador-jugador" class="form-control form-control-sm bg-dark text-white border-secondary" 
+                                                placeholder="Buscar..." onkeyup="buscarJugador()">
+                                        </div>
+                                    </div>
+                                </th>
+
+                                <th style="width: 25%;">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span>Posición</span>
+                                        <select id="filtro-posicion" class="form-select form-select-sm bg-dark text-white border-0 p-0 ms-2" 
+                                                onchange="buscarJugador()"> 
+                                            <option value="TODOS"> </option>
+                                            <option value="PO">PO</option>
+                                            <option value="DF">DF</option>
+                                            <option value="MC">MC</option>
+                                            <option value="DL">DL</option>
+                                            <option value="TODOS">Todos</option>
+                                        </select>
+                                    </div>
+                                </th>
+
+                                <th class="text-center" style="width: 15%;">Acción</th>
                             </tr>
                         </thead>
+
+                        <div id="mensaje-error" class="alert alert-danger d-none mt-2" role="alert">
+                            <i class="bi bi-exclamation-triangle-fill"></i> El jugador no existe o no hay jugadores en esa posición.
+                        </div>
                         <tbody id="tabla-plantilla">
                             <!-- Inyectado por JavaScript -->
                         </tbody>

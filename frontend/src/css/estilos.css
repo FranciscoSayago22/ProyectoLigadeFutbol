@@ -35,7 +35,7 @@ body {
 
 /* Crece para empujar el footer */
 main {
-    flex: 1;
+    flex-grow: 1;
 }
 
 /* Efectos de sombreado y bordes */
@@ -85,7 +85,6 @@ h1, h2, h5 {
 
 /* Resaltado de la columna de Puntos */
 td:last-child {
-    background-color: rgba(255, 193, 7, 0.1); /* Mantengo el alpha para el fondo */
     border-left: 1px solid #dee2e6;
 }
 
@@ -193,3 +192,4 @@ dd {
 body.bg-dark {
     background: radial-gradient(circle, #212529 0%, #000000 100%);
 }
+
