@@ -82,7 +82,7 @@ const listaPartidos = [
 let plantillaOriginal = [];
 
 /* ==========================================
-   3. FUNCIONES DE LÓGICA Y RENDERIZADO
+    3. FUNCIONES DE LÓGICA Y RENDERIZADO
    ========================================== */
 
 // --- POSICIONES Y FIXTURE ---
@@ -225,7 +225,24 @@ function renderizarTablaJugadores(jugadores) {
             </tr>`;
     });
 }
+/**
+ * Convierte un valor de 0-100 en un sistema de 5 estrellas
+ */
+function generarEstrellas(valor) {
+    const estrellasLlenas = Math.round(valor / 20); // 100/20 = 5 estrellas
+    let htmlEstrellas = "";
 
+    for (let i = 1; i <= 5; i++) {
+        if (i <= estrellasLlenas) {
+            // Estrella pintada
+            htmlEstrellas += '<i class="bi bi-star-fill text-warning me-1"></i>';
+        } else {
+            // Estrella vacía
+            htmlEstrellas += '<i class="bi bi-star text-muted me-1"></i>';
+        }
+    }
+    return htmlEstrellas;
+}
 function abrirFicha(jsonJugador) {
     const j = JSON.parse(jsonJugador);
     const cuerpo = document.getElementById('cuerpoModal');
@@ -233,50 +250,36 @@ function abrirFicha(jsonJugador) {
     document.getElementById('tituloModal').innerText = `Ficha Técnica: ${j.nombre} ${j.apellido}`;
 
     cuerpo.innerHTML = `
-        <div class="row text-start">
-            <div class="col-6 mb-3">
+        <div class="row text-start mb-4">
+            <div class="col-6">
                 <label class="small text-muted d-block">Edad</label>
                 <span class="fw-bold">${j.edad} años</span>
             </div>
-            <div class="col-6 mb-3">
+            <div class="col-6">
                 <label class="small text-muted d-block">Pie Hábil</label>
                 <span class="fw-bold">${j.pie}</span>
             </div>
         </div>
 
-        <div class="mb-3 text-start">
-            <label class="small d-flex justify-content-between">
-                Estado Físico <span>${j.estado}%</span>
-            </label>
-            <div class="progress" style="height: 8px;">
-                <div class="progress-bar bg-success" style="width: ${j.estado}%"></div>
+        <div class="list-group list-group-flush bg-dark">
+            <div class="list-group-item bg-dark text-white d-flex justify-content-between align-items-center border-secondary px-0">
+                <span>Estado Físico</span>
+                <div>${generarEstrellas(j.estado)}</div>
             </div>
-        </div>
-
-        <div class="mb-3 text-start">
-            <label class="small d-flex justify-content-between">
-                Precisión <span>${j.precision}%</span>
-            </label>
-            <div class="progress" style="height: 8px;">
-                <div class="progress-bar bg-primary" style="width: ${j.precision}%"></div>
+            <div class="list-group-item bg-dark text-white d-flex justify-content-between align-items-center border-secondary px-0">
+                <span>Precisión</span>
+                <div>${generarEstrellas(j.precision)}</div>
             </div>
-        </div>
-
-        <div class="mb-3 text-start">
-            <label class="small d-flex justify-content-between">
-                Velocidad <span>${j.velocidad}%</span>
-            </label>
-            <div class="progress" style="height: 8px;">
-                <div class="progress-bar bg-warning" style="width: ${j.velocidad}%"></div>
+            <div class="list-group-item bg-dark text-white d-flex justify-content-between align-items-center border-secondary px-0">
+                <span>Velocidad</span>
+                <div>${generarEstrellas(j.velocidad)}</div>
             </div>
         </div>
     `;
 
-    // Mostrar la modal
     const modal = new bootstrap.Modal(document.getElementById('modalFicha'));
     modal.show();
 }
-
 
 function buscarJugador() {
     const textoBusqueda = document.getElementById('buscador-jugador').value.toLowerCase();

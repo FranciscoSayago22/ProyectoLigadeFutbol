@@ -193,3 +193,12 @@ body.bg-dark {
     background: radial-gradient(circle, #212529 0%, #000000 100%);
 }
 
+/* Estilo para las estrellas de la ficha técnica */
+.text-warning.bi-star-fill {
+    filter: drop-shadow(0 0 2px rgba(255, 193, 7, 0.5));
+    font-size: 1.1rem;
+}
+
+.text-muted.bi-star {
+    opacity: 0.3;
+}
