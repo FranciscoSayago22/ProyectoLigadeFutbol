@@ -7,6 +7,8 @@
     --color-fondo: #f8f9fa;
     --color-oscuro: #343a40;
     --color-texto-muted: #495057;
+    --color-texto-negro: #040505; 
+    --color-texto-blanco: #f8f9fa;
     
     /* Sombras y Bordes */
     --shadow-sm: 0 4px 15px rgba(0,0,0,0.1);
@@ -30,8 +32,23 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    /* Un degradado que va de un verde muy oscuro a un negro profundo */
+    background: radial-gradient(circle at center, #0a2f1a 0%, #050a05 100%);
+    background-attachment: fixed; /* El fondo no se mueve al hacer scroll */
+    color: white; /* Asegúrate de que el texto base sea claro */
 }
 
+.texto-negro {
+    color: var(--color-texto-negro);
+}
+
+.texto-blanco {
+    color: var(--color-texto-blanco);
+}
+
+.color-liga{
+    color: var(--color-acento);
+}
 
 /* Crece para empujar el footer */
 main {
@@ -202,3 +219,22 @@ body.bg-dark {
 .text-muted.bi-star {
     opacity: 0.3;
 }
+
+/* Color de fondo para las filas del cuerpo en estado normal */
+#tabla-plantilla tr {
+    background-color: #ffffff !important;
+    transition: background-color 0.2s ease; /* Hace que el cambio de color sea suave */
+}
+
+/* MANEJO DEL HOVER */
+#tabla-plantilla tr:hover {
+    /* Un gris muy suave o un celeste clarito para que no choque con el blanco */
+    background-color: #f1f3f5 !important; 
+    
+    /* Opcional: puedes hacer que el texto cambie ligeramente de color también */
+    color: #000000 !important; 
+    
+    /* Opcional: agregar una sombra sutil para dar efecto de elevación */
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+}
+
