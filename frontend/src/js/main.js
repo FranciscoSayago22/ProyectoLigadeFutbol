@@ -8,13 +8,22 @@ class Persona {
     }
 }
 
+
 class Jugador extends Persona {
-    constructor(nombre, apellido, posicion, dorsal) {
+    constructor(nombre, apellido, posicion, dorsal, edad, estado, precision, velocidad, pie) {
         super(nombre, apellido);
         this.posicion = posicion;
         this.dorsal = dorsal;
+        // Nuevas propiedades para la Ficha Técnica
+        this.edad = edad;
+        this.estado = estado;      // Valor de 0 a 100
+        this.precision = precision; // Valor de 0 a 100
+        this.velocidad = velocidad; // Valor de 0 a 100
+        this.pie = pie;             // "Derecho" o "Izquierdo"
     }
 }
+
+
 
 class Equipo {
     constructor(id, nombre, historia, estadio, color, logo) {
@@ -46,17 +55,20 @@ class Partido {
 }
 
 /* ==========================================
-   2. INSTANCIACIÓN DE DATOS
+    2. INSTANCIACIÓN DE DATOS
    ========================================== */
 const equipo1 = new Equipo(1, "Titanes FC", "Dominadores del juego online desde 2020.", "Arena Virtual", "#ff0000");
 const equipo2 = new Equipo(2, "Spartans United", "Especialistas en defensa táctica y contraataque.", "Coliseo Digital", "#0000ff");
 const equipo3 = new Equipo(3, "Gamer Pro XI", "Club con los mejores asistidores de la región.", "Estadio E-Sports", "#28a745");
 
-equipo1.agregarJugador(new Jugador("Francisco", "Sayago", "DL", 9));
-equipo1.agregarJugador(new Jugador("Martin", "Pérez", "PO", 1));
-equipo1.agregarJugador(new Jugador("Alberto", "Zarza", "DF", 4)); // Jugador extra para probar orden
-equipo2.agregarJugador(new Jugador("Juan", "Spartan", "DF", 4));
-equipo3.agregarJugador(new Jugador("Enzo", "Gamer", "DL", 11));
+
+// Actualizamos la carga de jugadores con datos de ejemplo
+
+equipo1.agregarJugador(new Jugador("Francisco", "Sayago", "DL", 9, 24, 90, 85, 95, "Derecho"));
+equipo1.agregarJugador(new Jugador("Martin", "Pérez", "PO", 1, 28, 95, 70, 60, "Izquierdo"));
+equipo1.agregarJugador(new Jugador("Alberto", "Zarza", "DF", 4, 26, 85, 80, 75, "Izquierdo")); 
+equipo2.agregarJugador(new Jugador("Juan", "Spartan", "DF", 4, 29, 90, 75, 85, "Derecho"));
+equipo3.agregarJugador(new Jugador("Enzo", "Gamer", "DL", 11, 23, 95, 90, 80, "Derecho"));
 
 const ligaEquipos = [equipo1, equipo2, equipo3];
 
@@ -190,20 +202,79 @@ function verDetalle(id) {
 }
 
 // --- DETALLE DEL EQUIPO (FILTROS Y ORDEN) ---
-
 function renderizarTablaJugadores(jugadores) {
     const tabla = document.getElementById('tabla-plantilla');
     if (!tabla) return;
     tabla.innerHTML = ""; 
-    jugadores.forEach(jugador => {
+
+    jugadores.forEach(j => {
+        // Convertimos el objeto a string para pasarlo por el onclick (técnica sencilla)
+        const datosCifrados = JSON.stringify(j).replace(/"/g, '&quot;');
+        
         tabla.innerHTML += `
             <tr>
-                <td class="fw-bold text-center">#${jugador.dorsal}</td>
-                <td>${jugador.nombre} ${jugador.apellido}</td>
-                <td class="text-center"><span class="badge bg-secondary">${jugador.posicion}</span></td>
-                <td class="text-center"><button class="btn btn-sm btn-info text-white"><i class="bi bi-eye"></i> Ver </button></td>
+                <td class="fw-bold text-center">#${j.dorsal}</td>
+                <td>${j.nombre} ${j.apellido}</td>
+                <td class="text-center"><span class="badge bg-secondary">${j.posicion}</span></td>
+                <td class="text-center">
+                    <button class="btn btn-info btn-sm text-white shadow-sm" 
+                            onclick="abrirFicha('${datosCifrados}')">
+                        <i class="bi bi-eye"></i> Ver
+                    </button>
+                </td>
             </tr>`;
     });
+}
+
+function abrirFicha(jsonJugador) {
+    const j = JSON.parse(jsonJugador);
+    const cuerpo = document.getElementById('cuerpoModal');
+    
+    document.getElementById('tituloModal').innerText = `Ficha Técnica: ${j.nombre} ${j.apellido}`;
+
+    cuerpo.innerHTML = `
+        <div class="row text-start">
+            <div class="col-6 mb-3">
+                <label class="small text-muted d-block">Edad</label>
+                <span class="fw-bold">${j.edad} años</span>
+            </div>
+            <div class="col-6 mb-3">
+                <label class="small text-muted d-block">Pie Hábil</label>
+                <span class="fw-bold">${j.pie}</span>
+            </div>
+        </div>
+
+        <div class="mb-3 text-start">
+            <label class="small d-flex justify-content-between">
+                Estado Físico <span>${j.estado}%</span>
+            </label>
+            <div class="progress" style="height: 8px;">
+                <div class="progress-bar bg-success" style="width: ${j.estado}%"></div>
+            </div>
+        </div>
+
+        <div class="mb-3 text-start">
+            <label class="small d-flex justify-content-between">
+                Precisión <span>${j.precision}%</span>
+            </label>
+            <div class="progress" style="height: 8px;">
+                <div class="progress-bar bg-primary" style="width: ${j.precision}%"></div>
+            </div>
+        </div>
+
+        <div class="mb-3 text-start">
+            <label class="small d-flex justify-content-between">
+                Velocidad <span>${j.velocidad}%</span>
+            </label>
+            <div class="progress" style="height: 8px;">
+                <div class="progress-bar bg-warning" style="width: ${j.velocidad}%"></div>
+            </div>
+        </div>
+    `;
+
+    // Mostrar la modal
+    const modal = new bootstrap.Modal(document.getElementById('modalFicha'));
+    modal.show();
 }
 
 
