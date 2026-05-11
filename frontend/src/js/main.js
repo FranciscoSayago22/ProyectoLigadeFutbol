@@ -201,7 +201,7 @@ function renderizarTablaJugadores(jugadores) {
                 <td class="fw-bold text-center">#${jugador.dorsal}</td>
                 <td>${jugador.nombre} ${jugador.apellido}</td>
                 <td class="text-center"><span class="badge bg-secondary">${jugador.posicion}</span></td>
-                <td class="text-center"><button class="btn btn-sm btn-info text-white">Estadísticas</button></td>
+                <td class="text-center"><button class="btn btn-sm btn-info text-white"><i class="bi bi-eye"></i> Ver </button></td>
             </tr>`;
     });
 }
@@ -253,7 +253,7 @@ function cargarDatosDeSubpagina() {
         if(banner) banner.style.backgroundColor = equipo.color; 
         if(escudo) escudo.style.color = "white";
 
-        // --- CAMBIO AQUÍ: Ordenar por dorsal por defecto ---
+        // Ordenar por numero camiseta por defecto ---
         // Usamos sort comparando números (a - b para orden ascendente)
         plantillaOriginal = [...equipo.plantilla].sort((a, b) => a.dorsal - b.dorsal);
         
