@@ -74,62 +74,57 @@
             <!-- Historia del Club -->
             <article class="col-lg-4 mb-4">
                 <div class="card h-100 border-0 bg-light p-3">
-                    <h3 class="h5 fw-bold border-bottom pb-2">Nuestra Historia</h3>
-                    <p id="historia-texto">Descripción detallada de la historia del club y sus orígenes en el juego online.</p>
+                    <h3 class="h5 fw-bold border-bottom pb-2 texto-negro">Nuestra Historia</h3>
+                    <p id="historia-texto" class="texto-negro">Descripción detallada de la historia del club y sus orígenes en el juego online.</p>
                 </div>
             </article>
             <!-- Roster / Plantilla de Jugadores -->
-            <section class="col-lg-8">
-                <h3 class="fw-bold mb-3">Plantel Oficial</h3>
-                <div class="table-responsive">
-                    <table class="table table-hover align-middle">
-                        <thead class="table-dark">
-                            <tr>
-                                <th class="text-center" style="width: 10%;">Camiseta</th>
-                                
-                                <th style="width: 50%;">
-                                    <div class="d-flex align-items-center">
-                                        <span class="me-2">Nombre</span>
-                                        <div class="input-group input-group-sm">
-                                            <span class="input-group-text bg-dark text-white border-secondary"><i class="bi bi-search"></i></span>
-                                            <input type="text" id="buscador-jugador" class="form-control form-control-sm bg-dark text-white border-secondary" 
-                                                placeholder="Buscar..." onkeyup="buscarJugador()">
-                                        </div>
-                                    </div>
-                                </th>
+           <section class="col-lg-8">
+    <h3 class="fw-bold mb-3">Plantel Oficial</h3>
 
-                                <th style="width: 25%;">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span>Posición</span>
-                                        <select id="filtro-posicion" class="form-select form-select-sm bg-dark text-white border-0 p-0 ms-2" 
-                                                onchange="buscarJugador()"> 
-                                            <option value="TODOS"> </option>
-                                            <option value="PO">PO</option>
-                                            <option value="DF">DF</option>
-                                            <option value="MC">MC</option>
-                                            <option value="DL">DL</option>
-                                            <option value="TODOS">Todos</option>
-                                        </select>
-                                    </div>
-                                </th>
+    <div class="row g-2 mb-3">
+        <div class="col-12 col-md-7">
+            <div class="input-group">
+                <span class="input-group-text bg-dark text-white border-secondary"><i class="bi bi-search"></i></span>
+                <input type="text" id="buscador-jugador" 
+                       class="form-control bg-dark text-white border-secondary" 
+                       placeholder="Buscar jugador..." onkeyup="buscarJugador()">
+            </div>
+        </div>
+        <div class="col-12 col-md-5">
+            <select id="filtro-posicion" class="form-select bg-dark text-white border-secondary" onchange="buscarJugador()">
+                <option value="TODOS">Todas las posiciones</option>
+                <option value="PO">Porteros (PO)</option>
+                <option value="DF">Defensas (DF)</option>
+                <option value="MC">Mediocampistas (MC)</option>
+                <option value="DL">Delanteros (DL)</option>
+            </select>
+        </div>
+    </div>
 
-                                <th class="text-center" style="width: 15%;">Ficha Tecnica</th>
-                            </tr>
-                        </thead>
+    <div id="mensaje-error" class="alert alert-danger d-none mt-2" role="alert">
+        <i class="bi bi-exclamation-triangle-fill"></i> El jugador no existe o no hay jugadores en esa posición.
+    </div>
 
-                        <div id="mensaje-error" class="alert alert-danger d-none mt-2" role="alert">
-                            <i class="bi bi-exclamation-triangle-fill"></i> El jugador no existe o no hay jugadores en esa posición.
-                        </div>
-                        <tbody id="tabla-plantilla">
-                            <!-- Inyectado por JavaScript -->
-                        </tbody>
-                    </table>
-                </div>
-                <!-- Botón Volver siguiendo la jerarquía de navegación  -->
-                <a href="equipos.html" class="btn btn-outline-secondary mt-3">
-                    <i class="bi bi-arrow-left"></i> Volver a Equipos
-                </a>
-            </section>
+    <div class="table-responsive shadow-sm rounded">
+        <table class="table table-hover align-middle mb-0">
+            <thead class="table-dark">
+                <tr>
+                    <th class="text-center" style="width: 15%;">Camiseta</th>
+                    <th style="width: 50%;">Nombre</th>
+                    <th class="text-center" style="width: 20%;">Pos</th>
+                    <th class="text-center" style="width: 15%;">Ficha</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-plantilla">
+                </tbody>
+        </table>
+    </div>
+
+    <a href="equipos.html" class="btn btn-outline-secondary mt-3 texto-blanco">
+        <i class="bi bi-arrow-left text-blanco"></i> Volver a Equipos
+    </a>
+</section>
         </div>
 
     <div class="modal fade" id="modalFicha" tabindex="-1" aria-hidden="true">
