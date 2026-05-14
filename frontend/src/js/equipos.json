@@ -1,0 +1,262 @@
+[
+    {
+        "id": 1,
+        "nombre": "Almagro",
+        "historia": "Dominadores del juego online...",
+        "estadio": "Arena Virtual",
+        "color": "#ff0000",
+        "logo": "img/logos/Almagro.png",
+        "plantilla": [
+            {
+                "nombre": "Francisco",
+                "apellido": "Sayago",
+                "posicion": "DL",
+                "dorsal": 9,
+                "edad": 24,
+                "estado": 90,
+                "precision": 85,
+                "velocidad": 95,
+                "pie": "Derecho"
+            },
+            {
+                "nombre": "Sofia",
+                "apellido": "Gomez",
+                "posicion": "MC",
+                "dorsal": 8,
+                "edad": 22,
+                "estado": 88,
+                "precision": 90,
+                "velocidad": 80,
+                "pie": "Izquierdo"
+            },
+            {
+                "nombre": "Diego",
+                "apellido": "Martinez",
+                "posicion": "DF",
+                "dorsal": 5,
+                "edad": 28,
+                "estado": 92,
+                "precision": 80,
+                "velocidad": 85,
+                "pie": "Derecho"
+            },
+            {
+                "nombre": "Valentina",
+                "apellido": "Lopez",
+                "posicion": "DL",
+                "dorsal": 11,
+                "edad": 26,
+                "estado": 89,
+                "precision": 87,
+                "velocidad": 90,
+                "pie": "Derecho"
+            },
+            {
+                "nombre": "Carlos",
+                "apellido": "Fernandez",
+                "posicion": "MC",
+                "dorsal": 6,
+                "edad": 30,
+                "estado": 91,
+                "precision": 88,
+                "velocidad": 82,
+                "pie": "Izquierdo"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "nombre": "Bigfish",
+        "historia": "Reyes del juego online...",
+        "estadio": "Estadio Virtual",
+        "color": "#0000ff",
+        "logo": "img/logos/Bigfish.png",
+        "plantilla": [
+            {
+                "nombre": "Lucia",
+                "apellido": "Perez",
+                "posicion": "DL",
+                "dorsal": 10,
+                "edad": 25,
+                "estado": 91,
+                "precision": 86,
+                "velocidad": 92,
+                "pie": "Derecho"
+            },
+            {
+                "nombre": "Matias",
+                "apellido": "Gonzalez",
+                "posicion": "MC",
+                "dorsal": 7,
+                "edad": 27,
+                "estado": 89,
+                "precision": 89,
+                "velocidad": 84,
+                "pie": "Izquierdo"
+            },
+            {
+                "nombre": "Sofia",
+                "apellido": "Ramirez",
+                "posicion": "DF",
+                "dorsal": 4,
+                "edad": 29,
+                "estado": 90,
+                "precision": 82,
+                "velocidad": 88,
+                "pie": "Derecho"
+            },
+            {
+                "nombre": "Federico",
+                "apellido": "Sanchez",
+                "posicion": "DL",
+                "dorsal": 12,
+                "edad": 24,
+                "estado": 88,
+                "precision": 85,
+                "velocidad": 91,
+                "pie": "Derecho"
+            },
+            {
+                "nombre": "Isabella",
+                "apellido": "Diaz",
+                "posicion": "MC",
+                "dorsal": 9,
+                "edad": 26,
+                "estado": 90,
+                "precision": 87,
+                "velocidad": 83,
+                "pie": "Izquierdo"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "nombre": "Brugge",
+        "historia": "Gloriosos del juego online...",
+        "estadio": "La Bombonera Virtual",
+        "color": "#ffff00",
+        "logo": "img/logos/Brugge.png",
+        "plantilla": [
+            {
+                "nombre": "Santiago",
+                "apellido": "Lopez",
+                "posicion": "DL",
+                "dorsal": 11,
+                "edad": 23,
+                "estado": 90,
+                "precision": 84,
+                "velocidad": 93,
+                "pie": "Derecho"
+            },
+            {
+                "nombre": "Camila",
+                "apellido": "Gomez",
+                "posicion": "MC",
+                "dorsal": 8,
+                "edad": 24,
+                "estado": 88,
+                "precision": 90,
+                "velocidad": 81,
+                "pie": "Izquierdo"
+            },
+            {
+                "nombre": "Federico",
+                "apellido": "Martinez",
+                "posicion": "DF",
+                "dorsal": 5,
+                "edad": 27,
+                "estado": 91,
+                "precision": 81,
+                "velocidad": 86,
+                "pie": "Derecho"
+            },
+            {
+                "nombre": "Valentina",
+                "apellido": "Lopez",
+                "posicion": "DL",
+                "dorsal": 11,
+                "edad": 26,
+                "estado": 89,
+                "precision": 87,
+                "velocidad": 90,
+                "pie": "Derecho"
+            },
+            {
+                "nombre": "Carlos",
+                "apellido": "Fernandez",
+                "posicion": "MC",
+                "dorsal": 6,
+                "edad": 30,
+                "estado": 91,
+                "precision": 88,
+                "velocidad": 82,
+                "pie": "Izquierdo"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "nombre": "Milan",
+        "historia": "Campeones del juego online...",
+        "estadio": "La Bombonera Virtual",
+        "color": "#0000ff",
+        "logo": "img/logos/Milan.png",
+        "plantilla": [
+            {
+                "nombre": "Federico",
+                "apellido": "Sanchez",
+                "posicion": "DL",
+                "dorsal": 12,
+                "edad": 24,
+                "estado": 88,
+                "precision": 85,
+                "velocidad": 91,
+                "pie": "Derecho"
+            },
+            {
+                "nombre": "Isabella",
+                "apellido": "Diaz",
+                "posicion": "MC",
+                "dorsal": 9,
+                "edad": 26,
+                "estado": 90,
+                "precision": 87,
+                "velocidad": 83,
+                "pie": "Izquierdo"
+            },
+            {
+                "nombre": "Santiago",
+                "apellido": "Lopez",
+                "posicion": "DL",
+                "dorsal": 11,
+                "edad": 23,
+                "estado": 90,
+                "precision": 84,
+                "velocidad": 93,
+                "pie": "Derecho"
+            },
+            {
+                "nombre": "Camila",
+                "apellido": "Gomez",
+                "posicion": "MC",
+                "dorsal": 8,
+                "edad": 24,
+                "estado": 88,
+                "precision": 90,
+                "velocidad": 81,
+                "pie": "Izquierdo"
+            },
+            {
+                "nombre": "Federico",
+                "apellido": "Martinez",
+                "posicion": "DF",
+                "dorsal": 5,
+                "edad": 27,
+                "estado": 91,
+                "precision": 81,
+                "velocidad": 86,
+                "pie": "Derecho"
+            }
+        ]
+    }
+]

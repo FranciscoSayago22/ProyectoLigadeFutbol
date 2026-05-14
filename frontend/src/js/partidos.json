@@ -1,0 +1,50 @@
+[
+    {
+        "id": 101,
+        "idLocal": 1,
+        "idVisitante": 2,
+        "golesL": 2,
+        "golesV": 1,
+        "jugado": true
+    },
+    {
+        "id": 102,
+        "idLocal": 3,
+        "idVisitante": 1,
+        "golesL": 0,
+        "golesV": 0,
+        "jugado": true
+    },
+    {
+        "id": 103,
+        "idLocal": 2,
+        "idVisitante": 3,
+        "golesL": null,
+        "golesV": null,
+        "jugado": false
+    },
+    {
+        "id": 104,
+        "idLocal": 4,
+        "idVisitante": 1,
+        "golesL": null,
+        "golesV": null,
+        "jugado": false
+    },
+    {
+        "id": 105,
+        "idLocal": 4,
+        "idVisitante": 2,
+        "golesL": null,
+        "golesV": null,
+        "jugado": false
+    },
+    {
+        "id": 106,
+        "idLocal": 4,
+        "idVisitante": 3,
+        "golesL": null,
+        "golesV": null,
+        "jugado": false
+    }
+]
