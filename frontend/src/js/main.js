@@ -292,13 +292,204 @@ function cargarResultado(idPartido) {
 }
 
 /* ==========================================
-    6. INICIALIZADOR SEGÚN PÁGINA
+    6. CONTROL DE LOGIN
+   ========================================== */
+
+function Login() {
+    const formLogin = document.getElementById('formLogin');
+    if (!formLogin) return;
+
+    const email = document.getElementById('email');
+    const pass = document.getElementById('password');
+    const errorEmail = document.getElementById('errorEmail');
+    const errorPass = document.getElementById('errorPass');
+
+    // Lista de extensiones permitidas en América del Sur
+    const extensionesLatam = [".com", ".ar", ".cl", ".co", ".pe", ".uy", ".br", ".ve", ".ec", ".bo", ".py"];
+
+    email.addEventListener('input', () => {
+        let textoEmail = email.value.trim();
+        let esExtensionValida = false;
+
+        for (let i = 0; i < extensionesLatam.length; i++) {
+            if (textoEmail.toLowerCase().endsWith(extensionesLatam[i])) {
+                esExtensionValida = true;
+            }
+        }
+
+        if (textoEmail === "") {
+            email.classList.add('border-danger');
+            email.classList.remove('border-success');
+            errorEmail.textContent = "El correo electrónico es obligatorio.";
+            errorEmail.classList.remove('d-none');
+        } else if (!textoEmail.includes("@")) {
+            email.classList.add('border-danger');
+            email.classList.remove('border-success');
+            errorEmail.textContent = "El correo debe contener un símbolo '@'.";
+            errorEmail.classList.remove('d-none');
+        } else if (esExtensionValida === false) {
+            email.classList.add('border-danger');
+            email.classList.remove('border-success');
+            errorEmail.textContent = "Extensión no válida (Permitidos: .com o países de América del Sur).";
+            errorEmail.classList.remove('d-none');
+        } else {
+            email.classList.remove('border-danger');
+            email.classList.add('border-success');
+            errorEmail.classList.add('d-none');
+        }
+    });
+
+    pass.addEventListener('input', () => {
+        if (pass.value === "") {
+            pass.classList.add('border-danger');
+            pass.classList.remove('border-success');
+            errorPass.classList.remove('d-none');
+        } else {
+            pass.classList.remove('border-danger');
+            pass.classList.add('border-success');
+            errorPass.classList.add('d-none');
+        }
+    });
+
+    // Al enviar el formulario
+    formLogin.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Forzamos a que se ejecuten las comprobaciones visuales
+        email.dispatchEvent(new Event('input'));
+        pass.dispatchEvent(new Event('input'));
+
+        if (formLogin.checkValidity() && email.classList.contains('border-success') && pass.classList.contains('border-success')) {
+            alert(`¡Bienvenido! Iniciando sesión para: ${email.value}`);
+            window.location.href = 'posiciones.html';
+        }
+    });
+}
+
+/* ==========================================
+    6B. REGISTRO DE NUEVO USUARIO Y EQUIPO
+   ========================================== */
+function Registro() {
+    const formRegistro = document.getElementById('formRegistro');
+    if (!formRegistro) return;
+
+    const regEmail = document.getElementById('regEmail');
+    const regPassword = document.getElementById('regPassword');
+    const regNombreEquipo = document.getElementById('regNombreEquipo');
+    const regEstadio = document.getElementById('regEstadio');
+
+    const errorRegEmail = document.getElementById('errorRegEmail');
+    const errorRegPass = document.getElementById('errorRegPass');
+    const errorRegNombreEquipo = document.getElementById('errorRegNombreEquipo');
+    const errorRegEstadio = document.getElementById('errorRegEstadio');
+
+    const extensionesLatam = [".com", ".ar", ".cl", ".co", ".pe", ".uy", ".br", ".ve", ".ec", ".bo", ".py"];
+
+    regEmail.addEventListener('input', () => {
+        let textoEmail = regEmail.value;
+        let esExtensionValida = false;
+
+        for (let i = 0; i < extensionesLatam.length; i++) {
+            if (textoEmail.toLowerCase().endsWith(extensionesLatam[i])) {
+                esExtensionValida = true;
+            }
+        }
+
+        if (textoEmail === "") {
+            regEmail.classList.add('border-danger');
+            regEmail.classList.remove('border-success');
+            errorRegEmail.textContent = "El correo electrónico es obligatorio.";
+            errorRegEmail.classList.remove('d-none');
+        } else if (!textoEmail.includes("@")) {
+            regEmail.classList.add('border-danger');
+            regEmail.classList.remove('border-success');
+            errorRegEmail.textContent = "El correo debe contener un símbolo '@'.";
+            errorRegEmail.classList.remove('d-none');
+        } else if (esExtensionValida === false) {
+            regEmail.classList.add('border-danger');
+            regEmail.classList.remove('border-success');
+            errorRegEmail.textContent = "Usa una extensión válida (.com o países de América del Sur).";
+            errorRegEmail.classList.remove('d-none');
+        } else {
+            regEmail.classList.remove('border-danger');
+            regEmail.classList.add('border-success');
+            errorRegEmail.classList.add('d-none');
+        }
+    });
+
+    regPassword.addEventListener('input', () => {
+        if (regPassword.value === "") {
+            regPassword.classList.add('border-danger');
+            regPassword.classList.remove('border-success');
+            errorRegPass.textContent = "La contraseña es obligatoria.";
+            errorRegPass.classList.remove('d-none');
+        } else if (regPassword.value.length < 6) {
+            regPassword.classList.add('border-danger');
+            regPassword.classList.remove('border-success');
+            errorRegPass.textContent = "La contraseña debe tener al menos 6 caracteres.";
+            errorRegPass.classList.remove('d-none');
+        } else {
+            regPassword.classList.remove('border-danger');
+            regPassword.classList.add('border-success');
+            errorRegPass.classList.add('d-none');
+        }
+    });
+
+    regNombreEquipo.addEventListener('input', () => {
+        if (regNombreEquipo.value === "") {
+            regNombreEquipo.classList.add('border-danger');
+            regNombreEquipo.classList.remove('border-success');
+            errorRegNombreEquipo.textContent = "El nombre del equipo es obligatorio.";
+            errorRegNombreEquipo.classList.remove('d-none');
+        } else {
+            regNombreEquipo.classList.remove('border-danger');
+            regNombreEquipo.classList.add('border-success');
+            errorRegNombreEquipo.classList.add('d-none');
+        }
+    });
+
+    regEstadio.addEventListener('input', () => {
+        if (regEstadio.value === "") {
+            regEstadio.classList.add('border-danger');
+            regEstadio.classList.remove('border-success');
+            errorRegEstadio.textContent = "El nombre del estadio es obligatorio.";
+            errorRegEstadio.classList.remove('d-none');
+        } else {
+            regEstadio.classList.remove('border-danger');
+            regEstadio.classList.add('border-success');
+            errorRegEstadio.classList.add('d-none');
+        }
+    });
+
+    // Al enviar el formulario de registro
+    formRegistro.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Forzamos a evaluar visualmente todos los campos
+        regEmail.dispatchEvent(new Event('input'));
+        regPassword.dispatchEvent(new Event('input'));
+        regNombreEquipo.dispatchEvent(new Event('input'));
+        regEstadio.dispatchEvent(new Event('input'));
+
+        // Buscamos si quedó algún campo marcado con error
+        const erroresActivos = formRegistro.querySelectorAll('.border-danger');
+
+        if (formRegistro.checkValidity() && erroresActivos.length === 0) {
+            alert(`¡Registro exitoso! El club "${regNombreEquipo.value}" ha sido dado de alta.`);
+            window.location.href = 'equipos.html';
+        }
+    });
+}
+
+/* ==========================================
+    7. INICIALIZADOR SEGÚN PÁGINA
    ========================================== */
 function inicializarPagina() {
     if (document.getElementById('contenedor-equipos')) mostrarEquipos();
     if (document.getElementById('nombre-equipo')) cargarDatosDeSubpagina();
-    if (document.getElementById('formLogin')) inicializarLogin();
-    
+    if (document.getElementById('formLogin')) Login();
+    if (document.getElementById('formRegistro')) Registro();
+
     // Para la página de la Liga
     if (document.getElementById('tabla-body')) {
         mostrarTablaPosiciones();
