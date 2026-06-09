@@ -60,6 +60,7 @@
     
     <main class="container my-5">
         <header class="text-center mb-5">
+            <br>
             <h1 class="display-4 fw-bold">Centro Multimedia</h1>
             <p class="lead">Revive los mejores momentos y sigue la acción en directo.</p>
         </header>
@@ -70,29 +71,25 @@
                     <h3 class="text-warning mb-3"><i class="bi bi-broadcast"></i> Transmisión Oficial</h3>
                     <div class="ratio ratio-16x9">
                         <!-- Uso de iFrame para insertar contenido externo  -->
-                        <iframe src="https://www.youtube.com/embed/live_stream?channel=ID_DEL_CANAL" 
+                        <iframe src="https://www.youtube.com/embed/eGpE9iZGmmk" 
                                 title="Stream en Vivo LigaTPM" 
                                 allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Galería de Videos (VODs y Recortes)  -->
+        <!-- Galería de Videos  -->
         <section class="row g-4">
-            <h2 class="fw-bold mb-4">Resúmenes de la Fecha</h2>
+            <h2 class="fw-bold mb-4">Top Goles y Atajadas</h2>
             
-            <!-- Video Local o Subido  -->
+            <!-- Video de YouTube -->
             <div class="col-md-6 col-lg-4">
                 <div class="card h-100 border-0 shadow-sm">
                     <div class="ratio ratio-16x9">
-                        <video controls poster="img/poster1.jpg">
-                            <source src="video/resumen_fecha9.mp4" type="video/mp4">
-                            Tu navegador no soporta la etiqueta de video. 
-                        </video>
+                        <iframe src="https://www.youtube.com/embed/0b8NCrsH-cw" title="Mejores Goles" allowfullscreen></iframe>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Resumen Fecha 9</h5>
-                        <p class="card-text small text-muted">Los mejores goles y jugadas de la última jornada.</p>
+                        <h5 class="card-title">Top Goles</h5>
                     </div>
                 </div>
             </div>
@@ -100,21 +97,20 @@
             <div class="col-md-6 col-lg-4">
                 <div class="card h-100 border-0 shadow-sm">
                     <div class="ratio ratio-16x9">
-                        <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Mejores Atajadas" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/4qEa69j44gA" title="Mejores Atajadas" allowfullscreen></iframe>
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Top Atajadas</h5>
-                        <p class="card-text small text-muted">Análisis de los arqueros más destacados.</p>
                     </div>
                 </div>
             </div>
-            <!-- Espacio para Redes Sociales (TikTok/YouTube Shorts) -->
+            <!-- Canal Twitch -->
             <div class="col-md-6 col-lg-4">
-                <div class="card h-100 bg-primary text-white border-0 shadow-sm d-flex align-items-center justify-content-center p-4 text-center">
-                    <i class="bi bi-tiktok display-1 mb-3"></i>
-                    <h4>¡Síguenos en TikTok!</h4>
+                <div class="card h-100 card-twitch text-white border-0 shadow-sm d-flex align-items-center justify-content-center p-4 text-center">
+                    <i class="bi bi-twitch display-1 mb-3"></i>
+                    <h4>¡Síguenos en Twitch!</h4>
                     <p>Mira los clips más virales de la comunidad.</p>
-                    <a href="#" class="btn btn-light fw-bold">Ver Clips</a>
+                    <a href="https://www.twitch.tv/ligatpm" class="btn btn-light fw-bold text-dark">Ver Clips</a>
                 </div>
             </div>
         </section>
@@ -124,9 +120,9 @@
         <div class="container text-center">
             <p>Liga TPM - Internacional Latam &copy; 2026</p>
             <div class="mb-2">
-                <a href="#" class="text-white me-3 fs-5"><i class="bi bi-youtube"></i></a>
-                <a href="#" class="text-white me-3 fs-5"><i class="bi bi-tiktok"></i></a>
-                <a href="#" class="text-white fs-5"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.youtube.com/@TPMFootball/featured" class="text-white me-3 fs-5"><i class="bi bi-youtube"></i></a>
+                <a href="https://www.twitch.tv/ligatpm" class="text-white me-3 fs-5"><i class="bi bi-twitch"></i></a>
+                <a href="https://www.instagram.com/ligatpm" class="text-white fs-5"><i class="bi bi-instagram"></i></a>
             </div>
         </div>
     </footer>
