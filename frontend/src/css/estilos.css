@@ -89,6 +89,27 @@ main {
     box-shadow: 0 10px 20px rgba(0,0,0,0.12) !important;
 }
 
+.card-twitch {
+    background-color: #9146FF !important; /* Color oficial de Twitch */
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+/* Efecto visual interactivo al pasar el mouse */
+.card-twitch:hover {
+    transform: translateY(-5px); /* Eleva la tarjeta suavemente */
+    box-shadow: 0 10px 25px rgba(145, 70, 255, 0.5) !important; /* Brillo violeta */
+}
+
+/* Ajuste opcional para el botón interno dentro de la tarjeta de Twitch */
+.card-twitch .btn-light {
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.card-twitch .btn-light:hover {
+    background-color: #f8f9fa;
+    color: #9146FF !important; /* El texto del botón cambia a violeta al enfocarlo */
+}
+
 /* Tipografía de encabezados */
 h1, h2, h5 {
     text-transform: uppercase;
