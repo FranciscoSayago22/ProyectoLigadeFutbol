@@ -130,7 +130,7 @@ function renderizarTablaJugadores(jugadores) {
                 <td class="text-dark">${jugador.nombre} ${jugador.apellido}</td>
                 <td class="text-center"><span class="badge bg-secondary">${jugador.posicion}</span></td>
                 <td class="text-center">
-                    <button class="btn btn-info btn-sm text-white shadow-sm" onclick="abrirFicha('${datosCifrados}')">
+                    <button class="btn btn-primary btn-sm text-white shadow-sm" onclick="abrirFicha('${datosCifrados}')">
                         <i class="bi bi-eye"></i> <span class="d-none d-md-inline">Ver</span>
                     </button>
                 </td>
