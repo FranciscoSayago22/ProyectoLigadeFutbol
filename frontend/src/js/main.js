@@ -15,7 +15,7 @@ async function cargarDatosLiga() {
         if (!resEquipos.ok) throw new Error("Error en equipos.json");
         ligaEquipos = await resEquipos.json();
 
-        // 2. Cargamos el archivo partidos.json o LocalStorage
+        // 2. Cargamos el archivo partidos.json
         const resPartidos = await fetch('./js/partidos.json');
         if (!resPartidos.ok) throw new Error("Error en partidos.json");
 
