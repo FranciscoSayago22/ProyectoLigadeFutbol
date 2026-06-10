@@ -126,10 +126,10 @@ function renderizarTablaJugadores(jugadores) {
         const datosCifrados = JSON.stringify(jugador).replace(/"/g, '&quot;');
         tabla.innerHTML += `
             <tr>
-                <td class="fw-bold text-center">#${jugador.dorsal}</td>
-                <td class="text-dark">${jugador.nombre} ${jugador.apellido}</td>
-                <td class="text-center"><span class="badge bg-secondary">${jugador.posicion}</span></td>
-                <td class="text-center">
+                <td class="bg-dark text-white fw-bold text-center ">#${jugador.dorsal}</td>
+                <td class="bg-dark text-white">${jugador.nombre} ${jugador.apellido}</td>
+                <td class="bg-dark text-white text-center"><span class="badge bg-secondary">${jugador.posicion}</span></td>
+                <td class="bg-dark text-white text-center">
                     <button class="btn btn-primary btn-sm text-white shadow-sm" onclick="abrirFicha('${datosCifrados}')">
                         <i class="bi bi-eye"></i> <span class="d-none d-md-inline">Ver</span>
                     </button>
@@ -222,7 +222,7 @@ function mostrarTablaPosiciones() {
                 <td class="d-none d-md-table-cell">${e.gf}</td>
                 <td class="d-none d-md-table-cell">${e.gc}</td>
                 <td>${dif > 0 ? '+' + dif : dif}</td>
-                <td class="text-warning fw-bold">${e.pts}</td>
+                <td class="color-liga fw-bold text-center">${e.pts}</td>
             </tr>`;
     });
 }
@@ -239,9 +239,9 @@ function mostrarFixture() {
     jugados.forEach(p => {
         contenedor.innerHTML += `
             <tr>
-                <td class="text-end">${p.local.nombre}</td>
-                <td class="px-2 text-center"><span class="badge bg-white text-dark border">${p.golesL}-${p.golesV}</span></td>
-                <td class="text-start">${p.visitante.nombre}</td>
+                <td class="text-white">${p.local.nombre}</td>
+                <td class="px-2 "><span class="badge bg-white text-dark ">${p.golesL}-${p.golesV}</span></td>
+                <td class="text-white">${p.visitante.nombre}</td>
             </tr>`;
     });
 }
@@ -255,9 +255,9 @@ function mostrarPendientesAdmin() {
         const pendientes = listaPartidos.filter(p => !p.jugado);
         lista.innerHTML = pendientes.length === 0 ? "<p class='p-3'>No hay partidos pendientes</p>" : 
             pendientes.map(p => `
-            <div class="list-group-item d-flex justify-content-between align-items-center">
-                <span>${p.local.nombre} vs ${p.visitante.nombre}</span>
-                <button class="btn btn-sm btn-primary" onclick="cargarResultado(${p.id})">Cargar</button>
+            <div class="list-group-item d-flex justify-content-between bg-dark align-items-center">
+                <span class="text-white">${p.local.nombre} vs ${p.visitante.nombre}</span>
+                <button class="btn p-1 text-warning text-decoration-none" onclick="cargarResultado(${p.id})">Cargar</button>
             </div>
         `).join('');
     }
