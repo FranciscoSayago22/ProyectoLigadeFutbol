@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <!-- Estilos personalizados en carpeta css/  -->
     <link rel="stylesheet" href="css/estilos.css">
 </head>
+
 <body>
 
     <!-- Menú de Navegación (Header)  -->
@@ -21,9 +23,10 @@
                 <i class="bi bi-trophy-fill me-2 text-warning"></i>
                 <span class="fw-bold">LIGA TPM</span>
             </a>
-            
+
             <!-- Botón Hamburguesa para Móviles  -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+                aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <!-- Secciones del Menú -->
@@ -65,10 +68,12 @@
         <!-- Sección Banner Principal (Noticia Destacada)  -->
         <section class="row mb-5">
             <div class="col-12">
-                <div class="p-5 text-white bg-dark rounded-3 shadow-lg" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/banner_futbol.jpg') no-repeat center center; background-size: cover;">
+                <div class="p-5 text-white bg-dark rounded-3 shadow-lg"
+                    style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/banner_futbol.jpg') no-repeat center center; background-size: cover;">
                     <div class="container-fluid py-5">
                         <h1 class="display-5 fw-bold">Partido de la Fecha</h1>
-                        <p class="col-md-8 fs-4">No te pierdas el enfrentamiento clave entre los líderes de la tabla. ¡Jugadores destacados listos para la acción!</p>
+                        <p class="col-md-8 fs-4">No te pierdas el enfrentamiento clave entre los líderes de la tabla.
+                            ¡Jugadores destacados listos para la acción!</p>
                         <button class="btn btn-warning btn-lg" type="button">Ver Transmisión</button>
                     </div>
                 </div>
@@ -79,16 +84,58 @@
             <!-- Próximos Partidos -->
             <div class="col-md-8">
                 <h2 class="mb-4">Próximos Partidos</h2>
-                <!-- Aquí irán los Fixtures implementados con tablas o cards ] -->
+                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active " style="height: 100px;">
+                            <img src="./img/logos/Almagro.png" class="d-block w-100 " alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>First slide label</h5>
+                                <p>Some representative placeholder content for the first slide.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item" style="height: 100px;">
+                            <img src="./img/logos/Almagro.png" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Second slide label</h5>
+                                <p>Some representative placeholder content for the second slide.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item" style="height: 100px;">
+                            <img src="./img/logos/Almagro.png" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Third slide label</h5>
+                                <p>Some representative placeholder content for the third slide.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
             </div>
-            
+
             <!-- Sidebar (Noticias / Stream)  -->
             <aside class="col-md-4">
                 <div class="p-4 mb-3 bg-light rounded shadow-sm border">
                     <h4 class="fst-italic text-primary"><i class="bi bi-broadcast"></i> Stream en Vivo</h4>
                     <p class="mb-0 texto-negro">Sigue la liga en tiempo real por nuestros canales oficiales.</p>
                 </div>
-                
+
                 <!-- Aquí se insertará el IFRAME en Multimedia  -->
             </aside>
 
@@ -99,7 +146,8 @@
         <div class="container text-center">
             <p>Liga TPM - Internacional Latam &copy; 2026</p>
             <div class="mb-2">
-                <a href="https://www.youtube.com/@TPMFootball/featured" class="text-white me-3 fs-5"><i class="bi bi-youtube"></i></a>
+                <a href="https://www.youtube.com/@TPMFootball/featured" class="text-white me-3 fs-5"><i
+                        class="bi bi-youtube"></i></a>
                 <a href="https://www.twitch.tv/ligatpm" class="text-white me-3 fs-5"><i class="bi bi-twitch"></i></a>
                 <a href="https://www.instagram.com/ligatpm" class="text-white fs-5"><i class="bi bi-instagram"></i></a>
             </div>
@@ -109,4 +157,5 @@
     <!-- Scripts de Bootstrap al final del body  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
