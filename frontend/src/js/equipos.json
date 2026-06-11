@@ -4,7 +4,7 @@
         "nombre": "Almagro",
         "historia": "Dominadores del juego online...",
         "estadio": "Arena Virtual",
-        "color": "#ff0000",
+        "color": "#0000000",
         "logo": "img/logos/Almagro.png",
         "plantilla": [
             {
@@ -69,7 +69,7 @@
         "nombre": "Bigfish",
         "historia": "Reyes del juego online...",
         "estadio": "Estadio Virtual",
-        "color": "#0000ff",
+        "color": "#0000000",
         "logo": "img/logos/Bigfish.png",
         "plantilla": [
             {
@@ -134,7 +134,7 @@
         "nombre": "Brugge",
         "historia": "Gloriosos del juego online...",
         "estadio": "La Bombonera Virtual",
-        "color": "#ffff00",
+        "color": "#0000000",
         "logo": "img/logos/Brugge.png",
         "plantilla": [
             {
@@ -198,8 +198,8 @@
         "id": 4,
         "nombre": "Milan",
         "historia": "Campeones del juego online...",
-        "estadio": "La Bombonera Virtual",
-        "color": "#0000ff",
+        "estadio": "La Milanesa Virtual",
+        "color": "#0000000",
         "logo": "img/logos/Milan.png",
         "plantilla": [
             {
@@ -259,4 +259,5 @@
             }
         ]
     }
+    
 ]

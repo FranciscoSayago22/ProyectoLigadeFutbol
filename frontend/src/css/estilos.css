@@ -212,15 +212,19 @@ dd {
 
 /* Transiciones en el botón de descarga */
 .boton-descarga {
+    background-color: #495057 !important; 
+    color: #ffffff !important;            
+    border: 1px solid #6c757d !important; 
     transition: all var(--transition-slow);
-    box-shadow: 0 0 0 rgba(255, 193, 7, 0);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .boton-descarga:hover {
-    transform: scale(1.1);
-    background-color: #ffffff !important;
-    color: var(--color-acento) !important;
-    box-shadow: 0 10px 30px rgba(255, 193, 7, 0.4);
+    transform: scale(1.05);
+    background-color: #000000 !important;
+    color: #ffc107 !important;            
+    border-color: #ffc107 !important;    
+    box-shadow: 0 10px 30px rgba(255, 193, 7, 0.3); 
     letter-spacing: 2px;
 }
 
